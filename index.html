@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>NeonSpin Casino - SPIN. WIN. REPEAT.</title>
+  <meta name="description" content="NeonSpin Casino - Get 250% up to EUR 2,500 plus 250 Free Spins on your first deposit. 10,000+ games, live dealers, massive jackpots." />
+  <meta name="theme-color" content="#7B2FBE" />
+
+  <!-- Google Fonts: Orbitron + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #7B2FBE;
+      --secondary: #00D2FF;
+      --accent: #E91E8A;
+      --background: #0B0E14;
+      --text: #E8E6F0;
+      --border: #1A1F2E;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--background);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display { font-family: 'Orbitron', sans-serif; }
+
+    /* Neon glow effects */
+    .neon-purple { text-shadow: 0 0 20px rgba(123, 47, 190, 0.8), 0 0 40px rgba(123, 47, 190, 0.4); }
+    .neon-cyan { text-shadow: 0 0 20px rgba(0, 210, 255, 0.8), 0 0 40px rgba(0, 210, 255, 0.4); }
+    .neon-pink { text-shadow: 0 0 20px rgba(233, 30, 138, 0.8), 0 0 40px rgba(233, 30, 138, 0.4); }
+
+    .glow-border-purple { box-shadow: 0 0 15px rgba(123, 47, 190, 0.5), inset 0 0 15px rgba(123, 47, 190, 0.05); }
+    .glow-border-cyan { box-shadow: 0 0 15px rgba(0, 210, 255, 0.4), inset 0 0 15px rgba(0, 210, 255, 0.05); }
+    .glow-border-pink { box-shadow: 0 0 15px rgba(233, 30, 138, 0.5), inset 0 0 15px rgba(233, 30, 138, 0.05); }
+
+    /* Hero mesh gradient */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(123, 47, 190, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 210, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(233, 30, 138, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #0B0E14 0%, #0f1420 50%, #0B0E14 100%);
+    }
+
+    /* Button styles */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #9B3FDE 50%, var(--primary) 100%);
+      border: 1px solid rgba(123, 47, 190, 0.5);
+      box-shadow: 0 0 20px rgba(123, 47, 190, 0.4), 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 35px rgba(123, 47, 190, 0.7), 0 6px 20px rgba(0,0,0,0.4);
+      transform: scale(1.05);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff4db0 50%, var(--accent) 100%);
+      border: 1px solid rgba(233, 30, 138, 0.5);
+      box-shadow: 0 0 20px rgba(233, 30, 138, 0.4), 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-accent:hover {
+      box-shadow: 0 0 35px rgba(233, 30, 138, 0.7), 0 6px 20px rgba(0,0,0,0.4);
+      transform: scale(1.05);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.15) 0%, rgba(0, 210, 255, 0.05) 100%);
+      border: 1px solid rgba(0, 210, 255, 0.4);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+      color: var(--secondary);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.25) 0%, rgba(0, 210, 255, 0.1) 100%);
+      box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* Glassmorphism cards */
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Nav */
+    .nav-bg {
+      background: rgba(11, 14, 20, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Scrolling ticker */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track { animation: ticker 30s linear infinite; }
+
+    /* Game card hover */
+    .game-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .game-card:hover { transform: translateY(-6px) scale(1.02); }
+
+    /* Pulse animation for LIVE badge */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .pulse-dot { animation: pulse-dot 1.2s ease-in-out infinite; }
+
+    /* VIP tier gradient borders */
+    .tier-bronze { border-color: #cd7f32; }
+    .tier-silver { border-color: #c0c0c0; }
+    .tier-gold { border-color: #ffd700; }
+    .tier-platinum { border-color: var(--secondary); }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* Section divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), rgba(123,47,190,0.4), var(--border), transparent);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     NAV
+================================================================ -->
+<nav class="nav-bg fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2">
+      <span class="font-display text-xl font-black tracking-widest" style="color: var(--secondary);">NEON<span style="color: var(--accent);">SPIN</span></span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#games" class="text-sm font-medium hover:text-white transition-colors" style="color: var(--text);">Games</a>
+      <a href="#promotions" class="text-sm font-medium hover:text-white transition-colors" style="color: var(--text);">Promotions</a>
+      <a href="#live" class="text-sm font-medium hover:text-white transition-colors" style="color: var(--text);">Live Casino</a>
+      <a href="#vip" class="text-sm font-medium hover:text-white transition-colors" style="color: var(--text);">VIP</a>
+      <a href="#faq" class="text-sm font-medium hover:text-white transition-colors" style="color: var(--text);">FAQ</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#hero" class="btn-secondary rounded-full px-5 py-2 text-sm font-semibold">LOG IN</a>
+      <a href="#hero" class="btn-accent rounded-full px-6 py-2 text-sm font-bold text-white">SPIN TO WIN</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden border-t" style="border-color: var(--border); background: rgba(11,14,20,0.98);">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href="#games" class="text-sm font-medium py-2 border-b" style="color: var(--text); border-color: var(--border);" onclick="closeMobileMenu()">Games</a>
+      <a href="#promotions" class="text-sm font-medium py-2 border-b" style="color: var(--text); border-color: var(--border);" onclick="closeMobileMenu()">Promotions</a>
+      <a href="#live" class="text-sm font-medium py-2 border-b" style="color: var(--text); border-color: var(--border);" onclick="closeMobileMenu()">Live Casino</a>
+      <a href="#vip" class="text-sm font-medium py-2 border-b" style="color: var(--text); border-color: var(--border);" onclick="closeMobileMenu()">VIP</a>
+      <a href="#faq" class="text-sm font-medium py-2" style="color: var(--text);" onclick="closeMobileMenu()">FAQ</a>
+      <a href="#hero" class="btn-accent rounded-full px-6 py-3 text-sm font-bold text-white text-center mt-2">SPIN TO WIN</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<header id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-16" data-aos="fade-in">
+  <!-- Decorative grid lines -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,210,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,210,255,0.03) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <!-- Hero image background overlay -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="https://images.pexels.com/photos/28860864/pexels-photo-28860864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Colorful Casino Royale neon sign lighting up the night on the Las Vegas Strip." class="w-full h-full object-cover opacity-15" loading="lazy" />
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(11,14,20,0.85) 0%, rgba(11,14,20,0.6) 50%, rgba(11,14,20,0.9) 100%);"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10 py-20 md:py-32">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 text-xs font-bold tracking-widest glass-card" style="color: var(--secondary); border-color: rgba(0,210,255,0.3);" data-aos="fade-up" data-aos-delay="100">
+        <span class="w-2 h-2 rounded-full pulse-dot" style="background: var(--accent);"></span>
+        WELCOME BONUS ACTIVE
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="font-display text-5xl md:text-7xl font-black leading-none tracking-tight mb-4 neon-cyan" style="color: var(--text);" data-aos="fade-up" data-aos-delay="200">
+        SPIN.<br />
+        <span style="color: var(--accent);" class="neon-pink">WIN.</span><br />
+        REPEAT.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl leading-relaxed mb-8 max-w-xl" style="color: rgba(232,230,240,0.8);" data-aos="fade-up" data-aos-delay="300">
+        Get <strong style="color: var(--secondary);">250%</strong> up to <strong style="color: var(--secondary);">EUR 2,500</strong> + <strong style="color: var(--accent);">250 Free Spins</strong> - your first deposit just got supercharged.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-wrap gap-4 items-center mb-10" data-aos="fade-up" data-aos-delay="400">
+        <a href="#games" class="btn-accent rounded-full px-8 py-4 text-lg font-bold text-white hover:scale-105 hover:shadow-xl transition-all duration-300">
+          SPIN TO WIN
+        </a>
+        <a href="#games" class="btn-secondary rounded-full px-8 py-4 text-lg font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300">
+          SEE ALL GAMES
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-6 items-center" data-aos="fade-up" data-aos-delay="500">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">verified</span>
+          <span class="text-xs" style="color: rgba(232,230,240,0.6);">Licensed & Regulated</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">lock</span>
+          <span class="text-xs" style="color: rgba(232,230,240,0.6);">SSL Secured</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">payments</span>
+          <span class="text-xs" style="color: rgba(232,230,240,0.6);">Fast Payouts</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">support_agent</span>
+          <span class="text-xs" style="color: rgba(232,230,240,0.6);">24/7 Support</span>
+        </div>
+      </div>
+
+      <!-- Legal -->
+      <p class="text-xs mt-6" style="color: rgba(232,230,240,0.4);">18+ | T&amp;C apply | Play responsibly | BeGambleAware.org</p>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="absolute bottom-0 left-0 right-0 border-t glass-card" style="border-color: var(--border);">
+    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="text-center">
+        <div class="font-display text-xl md:text-2xl font-black" style="color: var(--secondary);">10,000+</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Games</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-xl md:text-2xl font-black" style="color: var(--accent);">EUR 6M</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Tournament Prizes</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-xl md:text-2xl font-black" style="color: var(--secondary);">250%</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Welcome Bonus</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-xl md:text-2xl font-black" style="color: var(--accent);">24/7</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Live Support</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================================
+     PROVIDER TICKER
+================================================================ -->
+<div class="py-6 overflow-hidden border-y" style="border-color: var(--border); background: rgba(26,31,46,0.5);">
+  <div class="ticker-track flex items-center gap-12 whitespace-nowrap w-max">
+    <span class="text-xs font-bold tracking-widest uppercase" style="color: rgba(232,230,240,0.3);">Powered by</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Pragmatic Play</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Novomatic</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Evolution Gaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">NetEnt</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Microgaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Playtech</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Push Gaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Red Tiger</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="text-xs font-bold tracking-widest uppercase ml-12" style="color: rgba(232,230,240,0.3);">Powered by</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Pragmatic Play</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Novomatic</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Evolution Gaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">NetEnt</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Microgaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Playtech</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Push Gaming</span>
+    <span style="color: var(--border);">|</span>
+    <span class="text-sm font-semibold" style="color: rgba(232,230,240,0.5);">Red Tiger</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     GAME CATEGORIES (Block 2)
+================================================================ -->
+<section id="games" class="py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-widest mb-3" style="color: var(--secondary);">GAME LIBRARY</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Pick Your Game</h2>
+      <p class="mt-3 text-base" style="color: rgba(232,230,240,0.6);">Powered by the biggest names in gaming</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
+      <button class="tab-btn active-tab rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300" onclick="switchTab(this, 'slots')" style="background: var(--primary); color: white; border: 1px solid var(--primary);">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">casino</span>Hot Slots
+      </button>
+      <button class="tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300" onclick="switchTab(this, 'live')" style="background: transparent; color: rgba(232,230,240,0.6); border: 1px solid var(--border);">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">videocam</span>Live Action
+      </button>
+      <button class="tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300" onclick="switchTab(this, 'jackpots')" style="background: transparent; color: rgba(232,230,240,0.6); border: 1px solid var(--border);">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">stars</span>Mega Jackpots
+      </button>
+      <button class="tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300" onclick="switchTab(this, 'table')" style="background: transparent; color: rgba(232,230,240,0.6); border: 1px solid var(--border);">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">sports_esports</span>Table Games
+      </button>
+    </div>
+
+    <!-- Featured Games Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+      <!-- Game Card 1 -->
+      <div class="game-card glass-card rounded-2xl overflow-hidden glow-border-purple cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative aspect-[3/4] overflow-hidden">
+          <img src="https://images.pexels.com/photos/29790831/pexels-photo-29790831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bright casino slot machines with colorful displays" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute top-2 right-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: var(--accent); color: white;">HOT</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <div class="text-xs font-bold text-white">Gates of Olympus 1000</div>
+            <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">Pragmatic Play</div>
+          </div>
+        </div>
+        <div class="p-3 flex gap-2">
+          <button class="flex-1 rounded-full py-1.5 text-xs font-bold text-white transition-all hover:scale-105 hover:shadow-xl" style="background: var(--primary);">PLAY</button>
+          <button class="flex-1 rounded-full py-1.5 text-xs font-semibold transition-all hover:scale-105" style="border: 1px solid var(--border); color: rgba(232,230,240,0.7);">DEMO</button>
+        </div>
+      </div>
+
+      <!-- Game Card 2 -->
+      <div class="game-card glass-card rounded-2xl overflow-hidden glow-border-cyan cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+        <div class="relative aspect-[3/4] overflow-hidden">
+          <img src="https://images.pexels.com/photos/4253690/pexels-photo-4253690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A close-up image of playing cards, highlighting King, Queen, Jack, Ace of Diamonds" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <div class="text-xs font-bold text-white">Book of Ra</div>
+            <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">Novomatic</div>
+          </div>
+        </div>
+        <div class="p-3 flex gap-2">
+          <button class="flex-1 rounded-full py-1.5 text-xs font-bold text-white transition-all hover:scale-105 hover:shadow-xl" style="background: var(--primary);">PLAY</button>
+          <button class="flex-1 rounded-full py-1.5 text-xs font-semibold transition-all hover:scale-105" style="border: 1px solid var(--border); color: rgba(232,230,240,0.7);">DEMO</button>
+        </div>
+      </div>
+
+      <!-- Game Card 3 -->
+      <div class="game-card glass-card rounded-2xl overflow-hidden glow-border-pink cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative aspect-[3/4] overflow-hidden">
+          <img src="https://images.pexels.com/photos/6764687/pexels-photo-6764687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A close-up image of bitcoins placed on a sparkling gold glitter background" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute top-2 right-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: var(--secondary); color: #000;">NEW</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <div class="text-xs font-bold text-white">Sugar Rush 1000</div>
+            <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">Pragmatic Play</div>
+          </div>
+        </div>
+        <div class="p-3 flex gap-2">
+          <button class="flex-1 rounded-full py-1.5 text-xs font-bold text-white transition-all hover:scale-105 hover:shadow-xl" style="background: var(--primary);">PLAY</button>
+          <button class="flex-1 rounded-full py-1.5 text-xs font-semibold transition-all hover:scale-105" style="border: 1px solid var(--border); color: rgba(232,230,240,0.7);">DEMO</button>
+        </div>
+      </div>
+
+      <!-- Game Card 4 -->
+      <div class="game-card glass-card rounded-2xl overflow-hidden glow-border-purple cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+        <div class="relative aspect-[3/4] overflow-hidden">
+          <img src="https://images.pexels.com/photos/28860864/pexels-photo-28860864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Colorful Casino neon sign" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <div class="text-xs font-bold text-white">Sweet Bonanza 1000</div>
+            <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">Pragmatic Play</div>
+          </div>
+        </div>
+        <div class="p-3 flex gap-2">
+          <button class="flex-1 rounded-full py-1.5 text-xs font-bold text-white transition-all hover:scale-105 hover:shadow-xl" style="background: var(--primary);">PLAY</button>
+          <button class="flex-1 rounded-full py-1.5 text-xs font-semibold transition-all hover:scale-105" style="border: 1px solid var(--border); color: rgba(232,230,240,0.7);">DEMO</button>
+        </div>
+      </div>
+
+      <!-- Game Card 5 -->
+      <div class="game-card glass-card rounded-2xl overflow-hidden glow-border-cyan cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative aspect-[3/4] overflow-hidden">
+          <img src="https://images.pexels.com/photos/23338847/pexels-photo-23338847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Astronaut silhouette with vibrant blue and purple light trails" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute top-2 right-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: #ffd700; color: #000;">MEGA</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <div class="text-xs font-bold text-white">Zeus vs Hades</div>
+            <div class="text-xs mt-0.5" style="color: rgba(255,255,255,0.5);">Pragmatic Play</div>
+          </div>
+        </div>
+        <div class="p-3 flex gap-2">
+          <button class="flex-1 rounded-full py-1.5 text-xs font-bold text-white transition-all hover:scale-105 hover:shadow-xl" style="background: var(--primary);">PLAY</button>
+          <button class="flex-1 rounded-full py-1.5 text-xs font-semibold transition-all hover:scale-105" style="border: 1px solid var(--border); color: rgba(232,230,240,0.7);">DEMO</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- More games row -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+      <div class="glass-card rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(123,47,190,0.3);"><span class="material-symbols-outlined text-base" style="color: var(--primary);">casino</span></div>
+        <div><div class="text-xs font-bold text-white">Big Bass Vegas</div><div class="text-xs" style="color: rgba(232,230,240,0.5);">Pragmatic Play</div></div>
+      </div>
+      <div class="glass-card rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,210,255,0.2);"><span class="material-symbols-outlined text-base" style="color: var(--secondary);">local_fire_department</span></div>
+        <div><div class="text-xs font-bold text-white">Sizzling Hot Deluxe</div><div class="text-xs" style="color: rgba(232,230,240,0.5);">Novomatic</div></div>
+      </div>
+      <div class="glass-card rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(233,30,138,0.2);"><span class="material-symbols-outlined text-base" style="color: var(--accent);">diamond</span></div>
+        <div><div class="text-xs font-bold text-white">Lucky Lady's Charm</div><div class="text-xs" style="color: rgba(232,230,240,0.5);">Novomatic</div></div>
+      </div>
+      <div class="glass-card rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="250">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(123,47,190,0.3);"><span class="material-symbols-outlined text-base" style="color: var(--primary);">bolt</span></div>
+        <div><div class="text-xs font-bold text-white">Starlight Princess</div><div class="text-xs" style="color: rgba(232,230,240,0.5);">Pragmatic Play</div></div>
+      </div>
+      <div class="glass-card rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,210,255,0.2);"><span class="material-symbols-outlined text-base" style="color: var(--secondary);">monetization_on</span></div>
+        <div><div class="text-xs font-bold text-white">Coin Volcano</div><div class="text-xs" style="color: rgba(232,230,240,0.5);">Pragmatic Play</div></div>
+      </div>
+    </div>
+
+    <!-- View all CTA -->
+    <div class="text-center" data-aos="fade-up">
+      <a href="#hero" class="btn-secondary rounded-full px-10 py-4 text-base font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block">
+        SEE ALL 10,000+ GAMES
+        <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     PROMOTIONS (Block 4)
+================================================================ -->
+<section id="promotions" class="py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-widest mb-3" style="color: var(--accent);">LIMITED TIME OFFERS</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Boost Your Play</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Promo Card 1 - Welcome Bonus -->
+      <div class="glass-card rounded-2xl overflow-hidden glow-border-purple" data-aos="fade-up" data-aos-delay="100">
+        <div class="h-2 w-full" style="background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: rgba(123,47,190,0.2);">
+            <span class="material-symbols-outlined" style="color: var(--primary);">rocket_launch</span>
+          </div>
+          <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background: rgba(123,47,190,0.2); color: var(--secondary);">WELCOME</div>
+          <h3 class="font-display text-lg font-bold mb-2 text-white">250% Welcome Bonus</h3>
+          <p class="text-sm mb-4" style="color: rgba(232,230,240,0.6);">Your first deposit just got supercharged - up to EUR 2,500 plus 250 Free Spins. Maximum launch power for your bankroll.</p>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="font-display text-3xl font-black" style="color: var(--secondary);">250%</span>
+            <span class="text-sm" style="color: rgba(232,230,240,0.5);">up to EUR 2,500</span>
+          </div>
+          <a href="#hero" class="btn-primary rounded-full px-6 py-3 text-sm font-bold text-white hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block w-full text-center">
+            GRAB YOUR BONUS
+          </a>
+        </div>
+      </div>
+
+      <!-- Promo Card 2 - Weekly Reload -->
+      <div class="glass-card rounded-2xl overflow-hidden glow-border-pink" data-aos="fade-up" data-aos-delay="200">
+        <div class="h-2 w-full" style="background: linear-gradient(90deg, var(--accent), #ff4db0);"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: rgba(233,30,138,0.2);">
+            <span class="material-symbols-outlined" style="color: var(--accent);">autorenew</span>
+          </div>
+          <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background: rgba(233,30,138,0.2); color: var(--accent);">WEEKLY</div>
+          <h3 class="font-display text-lg font-bold mb-2 text-white">Reload Recharge</h3>
+          <p class="text-sm mb-4" style="color: rgba(232,230,240,0.6);">Weekly deposit match to keep the spins going - every Monday. Top up your stack and stay in the game all week long.</p>
+          <div class="flex items-center gap-2 mb-5">
+            <span class="material-symbols-outlined text-sm" style="color: var(--accent);">schedule</span>
+            <span class="text-sm" style="color: rgba(232,230,240,0.5);">Every Monday - auto-credited</span>
+          </div>
+          <a href="#hero" class="btn-accent rounded-full px-6 py-3 text-sm font-bold text-white hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block w-full text-center">
+            GET BONUS
+          </a>
+        </div>
+      </div>
+
+      <!-- Promo Card 3 - Tournament -->
+      <div class="glass-card rounded-2xl overflow-hidden glow-border-cyan" data-aos="fade-up" data-aos-delay="300">
+        <div class="h-2 w-full" style="background: linear-gradient(90deg, var(--secondary), #00fff7);"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: rgba(0,210,255,0.2);">
+            <span class="material-symbols-outlined" style="color: var(--secondary);">emoji_events</span>
+          </div>
+          <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background: rgba(0,210,255,0.2); color: var(--secondary);">TOURNAMENT</div>
+          <h3 class="font-display text-lg font-bold mb-2 text-white">EUR 6M Tournament</h3>
+          <p class="text-sm mb-4" style="color: rgba(232,230,240,0.6);">Compete for massive prize pools every week - daily drops included. Six million euros waiting to be claimed by the bold.</p>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="font-display text-3xl font-black" style="color: var(--secondary);">€6,000,000</span>
+          </div>
+          <a href="#hero" class="btn-secondary rounded-full px-6 py-3 text-sm font-bold hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block w-full text-center">
+            JOIN NOW
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cashback banner -->
+    <div class="mt-6 glass-card rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 glow-border-purple" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(123,47,190,0.2);">
+          <span class="material-symbols-outlined" style="color: var(--primary);">savings</span>
+        </div>
+        <div>
+          <h3 class="font-bold text-white">Cashback Fridays</h3>
+          <p class="text-sm" style="color: rgba(232,230,240,0.6);">Get your losses back - every single week, no questions asked.</p>
+        </div>
+      </div>
+      <a href="#hero" class="btn-primary rounded-full px-8 py-3 text-sm font-bold text-white hover:scale-105 hover:shadow-xl transition-all duration-300 flex-shrink-0">
+        OPT IN
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     LIVE CASINO (Block 5)
+================================================================ -->
+<section id="live" class="py-20 md:py-32 relative overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="https://images.pexels.com/photos/5920856/pexels-photo-5920856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A man enjoying a win at a casino table, holding cash" class="w-full h-full object-cover opacity-10" loading="lazy" />
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(11,14,20,0.95) 0%, rgba(11,14,20,0.8) 50%, rgba(11,14,20,0.95) 100%);"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-4">
+      <div data-aos="fade-up">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full pulse-dot" style="background: var(--accent);"></span>
+          <span class="text-xs font-bold tracking-widest" style="color: var(--accent);">LIVE NOW</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Go Live</h2>
+        <p class="text-base mt-2" style="color: rgba(232,230,240,0.6);">Real dealers. Real-time. Real money.</p>
+      </div>
+      <a href="#hero" class="btn-secondary rounded-full px-6 py-3 text-sm font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+        ALL LIVE GAMES
+      </a>
+    </div>
+
+    <!-- Live game cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-pink game-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="https://images.pexels.com/photos/7594620/pexels-photo-7594620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A man in formal attire plays roulette in a luxurious casino" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-2 left-2 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+            <span class="text-xs font-bold" style="color: var(--accent);">LIVE</span>
+          </div>
+          <div class="absolute bottom-2 left-2 right-2">
+            <div class="text-xs font-bold text-white leading-tight">Speed Roulette</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-purple game-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="https://images.pexels.com/photos/6963313/pexels-photo-6963313.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A young man enjoys a game of poker with poker chips on a table" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-2 left-2 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+            <span class="text-xs font-bold" style="color: var(--accent);">LIVE</span>
+          </div>
+          <div class="absolute bottom-2 left-2 right-2">
+            <div class="text-xs font-bold text-white leading-tight">Blackjack 77 Ruby</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-cyan game-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="https://images.pexels.com/photos/7594620/pexels-photo-7594620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Casino table game" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-2 left-2 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+            <span class="text-xs font-bold" style="color: var(--accent);">LIVE</span>
+          </div>
+          <div class="absolute bottom-2 left-2 right-2">
+            <div class="text-xs font-bold text-white leading-tight">Mega Roulette</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-purple game-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="relative aspect-square bg-gradient-to-br flex items-center justify-center" style="background: linear-gradient(135deg, rgba(123,47,190,0.3), rgba(0,210,255,0.1));">
+          <div class="text-center p-4">
+            <span class="material-symbols-outlined text-4xl mb-2" style="color: var(--secondary);">360</span>
+            <div class="text-xs font-bold text-white">Mega Wheel</div>
+            <div class="flex items-center justify-center gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+              <span class="text-xs" style="color: var(--accent);">LIVE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-pink game-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative aspect-square bg-gradient-to-br flex items-center justify-center" style="background: linear-gradient(135deg, rgba(233,30,138,0.3), rgba(123,47,190,0.1));">
+          <div class="text-center p-4">
+            <span class="material-symbols-outlined text-4xl mb-2" style="color: var(--accent);">casino</span>
+            <div class="text-xs font-bold text-white">Immersive Roulette</div>
+            <div class="flex items-center justify-center gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+              <span class="text-xs" style="color: var(--accent);">LIVE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden cursor-pointer glow-border-cyan game-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="relative aspect-square bg-gradient-to-br flex items-center justify-center" style="background: linear-gradient(135deg, rgba(0,210,255,0.3), rgba(233,30,138,0.1));">
+          <div class="text-center p-4">
+            <span class="material-symbols-outlined text-4xl mb-2" style="color: var(--secondary);">candy</span>
+            <div class="text-xs font-bold text-white">Sweet Bonanza Candyland</div>
+            <div class="flex items-center justify-center gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: var(--accent);"></span>
+              <span class="text-xs" style="color: var(--accent);">LIVE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     SOCIAL PROOF / TESTIMONIALS (Block 6)
+================================================================ -->
+<section class="py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-widest mb-3" style="color: var(--secondary);">PLAYER REVIEWS</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Players Win Big</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Testimonial 1 -->
+      <div class="glass-card backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-6xl opacity-20 absolute top-2 left-4 font-display leading-none" style="color: var(--secondary);">"</div>
+        <div class="flex items-center gap-4 mb-4 relative z-10">
+          <img src="https://images.pexels.com/photos/5920856/pexels-photo-5920856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Casino player" class="w-12 h-12 rounded-full object-cover border-2" style="border-color: var(--secondary);" loading="lazy" />
+          <div>
+            <div class="font-bold text-white text-sm">Markus R.</div>
+            <div class="text-xs" style="color: rgba(232,230,240,0.5);">Berlin, Germany</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <span class="text-xs" style="color: #ffd700;">★★★★★</span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed relative z-10" style="color: rgba(232,230,240,0.8);">"Hit a massive win on Gates of Olympus within my first week. The 250% bonus stretched my bankroll further than I expected. NeonSpin is the real deal - fast payouts, no nonsense."</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="glass-card backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-6xl opacity-20 absolute top-2 left-4 font-display leading-none" style="color: var(--accent);">"</div>
+        <div class="flex items-center gap-4 mb-4 relative z-10">
+          <img src="https://images.pexels.com/photos/7594620/pexels-photo-7594620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Casino player" class="w-12 h-12 rounded-full object-cover border-2" style="border-color: var(--accent);" loading="lazy" />
+          <div>
+            <div class="font-bold text-white text-sm">Janis K.</div>
+            <div class="text-xs" style="color: rgba(232,230,240,0.5);">Riga, Latvia</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <span class="text-xs" style="color: #ffd700;">★★★★★</span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed relative z-10" style="color: rgba(232,230,240,0.8);">"The live roulette section is incredible - smooth stream, professional dealers. Won the EUR 6M tournament qualifier last month. The cashback feature is a lifesaver on bad streaks."</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="glass-card backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 relative" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-6xl opacity-20 absolute top-2 left-4 font-display leading-none" style="color: var(--primary);">"</div>
+        <div class="flex items-center gap-4 mb-4 relative z-10">
+          <img src="https://images.pexels.com/photos/6963313/pexels-photo-6963313.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Casino player" class="w-12 h-12 rounded-full object-cover border-2" style="border-color: var(--primary);" loading="lazy" />
+          <div>
+            <div class="font-bold text-white text-sm">Tomasz W.</div>
+            <div class="text-xs" style="color: rgba(232,230,240,0.5);">Warsaw, Poland</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <span class="text-xs" style="color: #ffd700;">★★★★★</span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed relative z-10" style="color: rgba(232,230,240,0.8);">"10,000+ games and they keep adding more. Mobile works perfectly - I spin on the go every day. Deposited Monday, withdrew Thursday. Zero hassle, pure adrenaline."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     VIP (Block 7)
+================================================================ -->
+<section id="vip" class="py-20 md:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(123,47,190,0.15) 0%, transparent 70%);"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-widest mb-3" style="color: var(--accent);">LOYALTY PROGRAM</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Level Up Your Game</h2>
+      <p class="mt-3 text-base max-w-xl mx-auto" style="color: rgba(232,230,240,0.6);">Every spin earns points. Every point unlocks more. Climb the tiers and access rewards built for serious players.</p>
+    </div>
+
+    <!-- VIP Tiers -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="glass-card rounded-2xl p-5 border-t-2 tier-bronze text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="font-display text-2xl font-black mb-1" style="color: #cd7f32;">I</div>
+        <div class="text-sm font-bold text-white mb-2">Bronze</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Entry level perks & weekly bonuses</div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border-t-2 tier-silver text-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="font-display text-2xl font-black mb-1" style="color: #c0c0c0;">II</div>
+        <div class="text-sm font-bold text-white mb-2">Silver</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Higher cashback + priority support</div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border-t-2 tier-gold text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="font-display text-2xl font-black mb-1" style="color: #ffd700;">III</div>
+        <div class="text-sm font-bold text-white mb-2">Gold</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Exclusive tournaments + bespoke offers</div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border-t-2 tier-platinum text-center glow-border-cyan" data-aos="fade-up" data-aos-delay="250">
+        <div class="font-display text-2xl font-black mb-1" style="color: var(--secondary);">IV</div>
+        <div class="text-sm font-bold text-white mb-2">Platinum</div>
+        <div class="text-xs" style="color: rgba(232,230,240,0.5);">Personal manager + fastest withdrawals</div>
+      </div>
+    </div>
+
+    <!-- Benefits grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <div class="glass-card rounded-2xl p-5 flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(0,210,255,0.2);">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">speed</span>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">Priority Withdrawals</h4>
+          <p class="text-sm" style="color: rgba(232,230,240,0.6);">Your winnings processed before the queue. Same-day payouts for top-tier members.</p>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 flex items-start gap-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(123,47,190,0.2);">
+          <span class="material-symbols-outlined text-base" style="color: var(--primary);">groups</span>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">Personal Manager</h4>
+          <p class="text-sm" style="color: rgba(232,230,240,0.6);">Dedicated account manager available around the clock. Direct line, no bots.</p>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(233,30,138,0.2);">
+          <span class="material-symbols-outlined text-base" style="color: var(--accent);">analytics</span>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">Elite Cashback</h4>
+          <p class="text-sm" style="color: rgba(232,230,240,0.6);">Higher return rates reserved for upper-tier members. More play, more back.</p>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl p-5 flex items-start gap-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(0,210,255,0.2);">
+          <span class="material-symbols-outlined text-base" style="color: var(--secondary);">redeem</span>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-1">Bespoke Offers</h4>
+          <p class="text-sm" style="color: rgba(232,230,240,0.6);">Promotions tailored to your play style. What works for you, not generic mass offers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" data-aos="fade-up">
+      <a href="#hero" class="btn-accent rounded-full px-10 py-4 text-base font-bold text-white hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block">
+        JOIN THE VIP PROGRAM
+        <span class="material-symbols-outlined align-middle text-base ml-1">workspace_premium</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     FAQ
+================================================================ -->
+<section id="faq" class="py-20 md:py-32">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-widest mb-3" style="color: var(--secondary);">GOT QUESTIONS?</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold" style="color: var(--text);">Quick Answers</h2>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          How do I claim the 250% welcome bonus?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          Register your account, complete verification, and make your first deposit. The 250% bonus up to EUR 2,500 plus 250 Free Spins is credited automatically. Minimum deposit applies. Terms and wagering requirements apply - see full T&amp;C on our promotions page.
+        </div>
+      </details>
+
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="150">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          How fast are withdrawals processed?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          Standard withdrawals are processed within 24-48 hours. VIP and Platinum members receive priority processing with same-day payouts. Crypto withdrawals are typically the fastest. Bank transfers may take 3-5 business days depending on your provider.
+        </div>
+      </details>
+
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          What payment methods are accepted?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          We accept Visa, Mastercard, bank transfers, major e-wallets (Skrill, Neteller), and select cryptocurrencies. All transactions are encrypted and processed securely. Deposit and withdrawal limits vary by method - check the cashier for your options.
+        </div>
+      </details>
+
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="250">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          Is NeonSpin Casino licensed and safe?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          Yes. NeonSpin Casino operates under a valid gaming license and complies with all regulatory requirements. We use 256-bit SSL encryption, RNG-certified games, and responsible gambling tools including deposit limits, self-exclusion, and reality checks. Player safety is non-negotiable.
+        </div>
+      </details>
+
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          How does the EUR 6M tournament work?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          The tournament runs weekly with daily drop events feeding into the main prize pool. Opt in from the promotions page, play on eligible games, and accumulate points on the leaderboard. Top positions at the end of each period share the prize pool. Daily drops award random prizes throughout the day - no leaderboard needed.
+        </div>
+      </details>
+
+      <details class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="350">
+        <summary class="flex items-center justify-between p-5 cursor-pointer list-none font-semibold text-white hover:text-opacity-90">
+          Can I play on mobile?
+          <span class="material-symbols-outlined transition-transform group-open:rotate-180" style="color: var(--secondary);">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm" style="color: rgba(232,230,240,0.7);">
+          Absolutely. NeonSpin is fully optimized for mobile browsers on iOS and Android - no download required. The full game library, live casino, payments, and account management are all available on your phone. For the best experience, use a modern browser like Chrome or Safari.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     FINAL CTA
+================================================================ -->
+<section class="py-20 md:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(123,47,190,0.2) 0%, rgba(233,30,138,0.1) 40%, transparent 70%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,210,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,210,255,0.02) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+    <p class="text-xs font-bold tracking-widest mb-4" style="color: var(--accent);">START NOW</p>
+    <h2 class="font-display text-4xl md:text-6xl font-black mb-6 neon-cyan" style="color: var(--text);">
+      YOUR JACKPOT<br />
+      <span style="color: var(--accent);" class="neon-pink">IS WAITING.</span>
+    </h2>
+    <p class="text-lg mb-8" style="color: rgba(232,230,240,0.7);">
+      Join thousands of players spinning for real wins.<br />
+      <strong style="color: var(--secondary);">250%</strong> up to <strong style="color: var(--secondary);">EUR 2,500</strong> + <strong style="color: var(--accent);">250 Free Spins</strong> - first deposit only.
+    </p>
+    <a href="#hero" class="btn-accent rounded-full px-12 py-5 text-xl font-black text-white hover:scale-105 hover:shadow-xl transition-all duration-300 inline-block mb-6">
+      SPIN TO WIN
+    </a>
+    <p class="text-xs" style="color: rgba(232,230,240,0.4);">18+ | T&amp;C apply | Play responsibly | BeGambleAware.org | GamCare.org.uk</p>
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer class="border-t" style="border-color: var(--border); background: rgba(6,9,14,0.95);">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <!-- Top row -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+      <!-- Brand -->
+      <div>
+        <div class="font-display text-2xl font-black tracking-widest mb-3" style="color: var(--secondary);">NEON<span style="color: var(--accent);">SPIN</span></div>
+        <p class="text-sm mb-4" style="color: rgba(232,230,240,0.5);">NeonSpin Casino - Where Every Spin Counts. Your high-energy gaming destination with 10,000+ games.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 rounded-lg glass-card flex items-center justify-center" style="color: var(--secondary);" aria-label="Twitter">
+            <span class="material-symbols-outlined text-sm">rss_feed</span>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-lg glass-card flex items-center justify-center" style="color: var(--secondary);" aria-label="Support">
+            <span class="material-symbols-outlined text-sm">support_agent</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Games -->
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4 tracking-wider">GAMES</h4>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#games" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Slots</a></li>
+          <li><a href="#live" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Live Casino</a></li>
+          <li><a href="#games" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Jackpots</a></li>
+          <li><a href="#games" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Table Games</a></li>
+        </ul>
+      </div>
+
+      <!-- Promotions -->
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4 tracking-wider">PROMOTIONS</h4>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#promotions" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Welcome Bonus</a></li>
+          <li><a href="#promotions" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Weekly Reload</a></li>
+          <li><a href="#promotions" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Tournament</a></li>
+          <li><a href="#promotions" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Cashback</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="text-sm font-bold text-white mb-4 tracking-wider">SUPPORT</h4>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#faq" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">FAQ</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Help Center</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Responsible Gaming</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors" style="color: rgba(232,230,240,0.5);">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Payment methods -->
+    <div class="flex flex-wrap items-center gap-3 mb-8 py-6 border-y" style="border-color: var(--border);">
+      <span class="text-xs font-bold tracking-wider" style="color: rgba(232,230,240,0.4);">PAYMENTS:</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold text-white">VISA</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold text-white">MASTERCARD</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold text-white">SKRILL</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold text-white">NETELLER</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold" style="color: #f7931a;">BTC</span>
+      <span class="glass-card rounded px-3 py-1.5 text-xs font-bold" style="color: #627eea;">ETH</span>
+    </div>
+
+    <!-- Responsible gaming -->
+    <div class="glass-card rounded-xl p-4 mb-6">
+      <p class="text-xs leading-relaxed text-center" style="color: rgba(232,230,240,0.5);">
+        <strong style="color: rgba(232,230,240,0.8);">Responsible Gaming:</strong> Gambling can be addictive. Play responsibly. NeonSpin Casino only accepts players aged 18 and above. If you or someone you know has a gambling problem, please seek help at BeGambleAware.org or GamCare.org.uk.
+      </p>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs" style="color: rgba(232,230,240,0.3);">&copy; 2026 NeonSpin Casino. All rights reserved.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#" class="text-xs hover:text-white transition-colors" style="color: rgba(232,230,240,0.4);">Terms &amp; Conditions</a>
+        <a href="#" class="text-xs hover:text-white transition-colors" style="color: rgba(232,230,240,0.4);">Privacy Policy</a>
+        <a href="#" class="text-xs hover:text-white transition-colors" style="color: rgba(232,230,240,0.4);">Cookie Policy</a>
+        <a href="#" class="text-xs hover:text-white transition-colors" style="color: rgba(232,230,240,0.4);">Responsible Gaming</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================================
+     SCRIPTS
+================================================================ -->
+<script>
+  // AOS init
+  AOS.init({ duration: 800, once: true });
+
+  // Mobile menu toggle
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // Game category tabs
+  function switchTab(btn, category) {
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.style.background = 'transparent';
+      b.style.color = 'rgba(232,230,240,0.6)';
+      b.style.borderColor = 'var(--border)';
+    });
+    btn.style.background = 'var(--primary)';
+    btn.style.color = 'white';
+    btn.style.borderColor = 'var(--primary)';
+  }
+</script>
+
+</body>
+</html>
